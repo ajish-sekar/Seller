@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardUseCompatPadding="true"
+    android:id="@+id/card_view_product">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageViewProductImage"
+            android:src="@drawable/ic_product"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <TextView
+            android:id="@+id/textViewProductTitle"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageViewProductImage"
+            android:text="Product Title"
+            android:paddingTop="20dp"
+            android:lines="1"
+            android:padding="5dp"
+            />
+        <TextView
+            android:id="@+id/textViewProductPrice"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageViewProductImage"
+            android:layout_below="@+id/textViewProductTitle"
+            android:text="Product Price"
+            android:paddingTop="20dp"
+            android:lines="1"
+            android:padding="5dp"
+            />
+        <TextView
+            android:id="@+id/textViewProductDescription"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageViewProductImage"
+            android:layout_below="@+id/textViewProductPrice"
+            android:text="Product Description"
+            android:paddingTop="20dp"
+            android:lines="1"
+            android:padding="5dp"
+            />
+        <TextView
+            android:id="@+id/textViewProductCategory"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageViewProductImage"
+            android:layout_below="@+id/textViewProductDescription"
+            android:text="Product Category"
+            android:paddingTop="20dp"
+            android:lines="1"
+            android:padding="5dp"
+            />
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
