@@ -1,5 +1,7 @@
 package com.example.shgseller.network;
 
+import com.example.shgseller.Constants;
+
 import java.util.Collections;
 
 import okhttp3.CipherSuite;
@@ -11,13 +13,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static Retrofit retrofit;
-    private static final String BASE_URL = "https://raj-site.000webhostapp.com";
+
 
     public static Retrofit getRetrofitInstance(){
 
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(Constants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

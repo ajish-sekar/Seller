@@ -61,12 +61,10 @@ public class HomeActivity extends AppCompatActivity {
         progressDialog.setMessage("Loading....");
         progressDialog.show();
 
-        ProductEndpoints productEndpoints = RetrofitClient.getRetrofitInstance().create(ProductEndpoints.class);
-        Call< List<Product> > call = productEndpoints.getAllProducts();
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.bringToFront();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,12 +78,15 @@ public class HomeActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_settings, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        ProductEndpoints productEndpoints = RetrofitClient.getRetrofitInstance().create(ProductEndpoints.class);
+        Call< List<Product> > call = productEndpoints.getAllProducts();
 
         call.enqueue(new Callback<List<Product>>() {
             @Override
@@ -105,6 +106,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private  void generateProductList(List< Product> productList){
+        Log.v("HOLA",productList.toString());
         productRecyclerView = findViewById(R.id.productRecyclerView);
         productAdapter = new ProductAdapter(this,productList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HomeActivity.this);

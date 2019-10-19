@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.shgseller.ui.RegisterActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -22,8 +23,8 @@ import butterknife.ButterKnife;
     @BindView(R.id.textInputLayoutPassword)   TextInputLayout passwordInputText;
     @BindView(R.id.textInputEditAccount)  TextInputEditText accountEditText;
     @BindView(R.id.textInputEditPassword)   TextInputEditText passwordEditText;
-    @BindView(R.id.btnLogin)  Button buttonLogin;
-    @BindView(R.id.btnRegister)  Button buttonRegister;
+    @BindView(R.id.buttonLogin)  Button buttonLogin;
+    @BindView(R.id.buttonRegister)  Button buttonRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,14 @@ import butterknife.ButterKnife;
                     Intent intent = new Intent(MainActivity.this,HomeActivity.class);
                     startActivity(intent);
                 }
+            }
+        });
+
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerActivity = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(registerActivity);
             }
         });
 

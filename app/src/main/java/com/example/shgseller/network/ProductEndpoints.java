@@ -8,6 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ProductEndpoints {
-    @GET("/products.json")
+    @GET("/products")
     Call<List<Product>> getAllProducts();
 }
