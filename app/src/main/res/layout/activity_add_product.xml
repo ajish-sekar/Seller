@@ -89,23 +89,16 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonChoose"
+            android:id="@+id/buttonAddImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select" />
+            android:text="Select Image" />
 
-        <EditText
-            android:id="@+id/editTextImageName"
-            android:hint="Name For Image"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-<!--        <Button-->
-<!--            android:id="@+id/buttonUpload"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Upload" />-->
+        <ImageView
+            android:id="@+id/imageViewProductImage"
+            android:layout_centerHorizontal="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
 
     </LinearLayout>
 
@@ -119,9 +112,6 @@
         android:layout_marginEnd="12dp"
         android:text="ADD PRODUCT"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
 
 </RelativeLayout>

@@ -23,9 +23,6 @@
         app:headerLayout="@layout/nav_header_home"
         app:menu="@menu/activity_home_drawer" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/productRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

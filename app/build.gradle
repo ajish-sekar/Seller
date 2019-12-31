@@ -22,9 +22,19 @@ android {
         }
     }
 }
+repositories {
+    maven { url "https://jitpack.io" }
+}
 
 dependencies {
     api 'com.google.android.material:material:1.1.0-alpha06'
+
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:2.0.0'
+    // for experimental rx picker
+    implementation 'com.github.esafirm.android-image-picker:rximagepicker:2.0.0'
+    // If you have a problem with Glide, please use the same Glide version or simply open an issue
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.google.code.gson:gson:2.8.5'

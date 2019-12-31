@@ -28,7 +28,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     class ProductViewHolder extends RecyclerView.ViewHolder{
         public final View mView;
-        //textview,imageview declarations
         ImageView imageViewProductImage;
         TextView textViewProductTitle;
         TextView textViewProductPrice;
@@ -55,7 +54,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public  void  onBindViewHolder(ProductViewHolder holder,int position){
-        //settext,image...
         holder.textViewProductTitle.setText(productList.get(position).getProduct_title());
         holder.textViewProductCategory.setText(productList.get(position).getProduct_category());
         holder.textViewProductPrice.setText(String.valueOf(productList.get(position).getProduct_price()));

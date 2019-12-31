@@ -1,6 +1,7 @@
 package com.example.shgseller;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.shgseller.adapter.ProductAdapter;
@@ -8,6 +9,7 @@ import com.example.shgseller.models.Product;
 import com.example.shgseller.network.ProductEndpoints;
 import com.example.shgseller.network.RetrofitClient;
 import com.example.shgseller.network.SellerEndpoints;
+import com.example.shgseller.ui.AddProductActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -48,7 +50,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private ProductAdapter productAdapter;
     private RecyclerView productRecyclerView;
-
     ProgressDialog progressDialog;
 
     @Override
@@ -68,8 +69,9 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(HomeActivity.this, AddProductActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -106,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private  void generateProductList(List< Product> productList){
-        Log.v("HOLA",productList.toString());
+//        Log.v("HOLA",productList.toString());
         productRecyclerView = findViewById(R.id.productRecyclerView);
         productAdapter = new ProductAdapter(this,productList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HomeActivity.this);
