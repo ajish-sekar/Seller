@@ -3,6 +3,7 @@ package com.example.shgseller.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NavUtils;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
@@ -28,6 +29,7 @@ import com.esafirm.imagepicker.features.ImagePicker;
 import com.esafirm.imagepicker.features.ReturnMode;
 import com.esafirm.imagepicker.model.Image;
 import com.example.shgseller.Constants;
+import com.example.shgseller.HomeActivity;
 import com.example.shgseller.MainActivity;
 import com.example.shgseller.R;
 import com.example.shgseller.models.Product;
@@ -38,6 +40,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.File;
+import java.net.HttpURLConnection;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -51,6 +54,7 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.HTTP;
 
 public class AddProductActivity extends AppCompatActivity {
 
@@ -160,11 +164,18 @@ public class AddProductActivity extends AppCompatActivity {
         call.enqueue(new Callback<Product>() {
             @Override
             public void onResponse(Call<Product> call, Response<Product> response) {
+                int responseCode = response.code();
+                if (responseCode == HttpURLConnection.HTTP_CREATED){
+                    Toast.makeText(getApplicationContext(),"Added new product.",Toast.LENGTH_LONG).show();
+
+                }
                 Log.v("TAG","CODE : "+response.code());
+
             }
 
             @Override
             public void onFailure(Call<Product> call, Throwable t) {
+                Toast.makeText(getApplicationContext(),"Unable to add product",Toast.LENGTH_SHORT).show();
                 Log.v("TAG","ERROR MSG : "+t.getMessage());
             }
         });
@@ -183,6 +194,5 @@ public class AddProductActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
 
 }

@@ -3,41 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_products">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.shgseller.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_profile"
+        android:name="com.example.shgseller.ui.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.shgseller.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_products"
+        android:name="com.example.shgseller.ui.ProductsFragment"
+        android:label="@string/menu_products"
+        tools:layout="@layout/fragment_products" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.shgseller.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_orders"
+        android:name="com.example.shgseller.ui.OrdersFragment"
+        android:label="@string/menu_orders"
+        tools:layout="@layout/fragment_orders" />
 
+    <fragment
+        android:id="@+id/nav_earnings"
+        android:name="com.example.shgseller.ui.EarningsFragment"
+        android:label="@string/menu_earnings"
+        tools:layout="@layout/fragment_earnings" />
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.shgseller.ui.tools.ToolsFragment"
+        android:name="com.example.shgseller.ui.SettingsFragment"
         android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_settings" />
+
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.shgseller.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        android:id="@+id/nav_terms"
+        android:name="com.example.shgseller.ui.TCFragment"
+        android:label="@string/menu_terms"
+        tools:layout="@layout/fragment_tc" />
 
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.shgseller.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>
