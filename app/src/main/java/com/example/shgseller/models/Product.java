@@ -13,6 +13,26 @@ public class Product {
     private String product_description;
     @SerializedName("product_category")
     private String product_category;
+    @SerializedName("product_photo")
+    private String product_photo;
+    @SerializedName("product_stock")
+    private String product_stock;
+
+    public String getProduct_stock() {
+        return product_stock;
+    }
+
+    public void setProduct_stock(String product_stock) {
+        this.product_stock = product_stock;
+    }
+
+    public String getProduct_photo() {
+        return product_photo;
+    }
+
+    public void setProduct_photo(String product_photo) {
+        this.product_photo = product_photo;
+    }
 
     public String getProduct_id() {
         return product_id;

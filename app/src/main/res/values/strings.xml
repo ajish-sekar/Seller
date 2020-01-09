@@ -24,5 +24,16 @@
     <string name="menu_logout">Logout</string>
     <string name="menu_terms">T&amp;C</string>
     <string name="menu_profile">Profile</string>
+    <string name="spinner_prompt">Product category</string>
+
+    <string-array name="product_categories">
+        <item>Handicraft</item>
+        <item>Food</item>
+        <item>Beauty</item>
+        <item>Clothing</item>
+        <item>Fashion-and-Jewellery</item>
+        <item>Household</item>
+        <item>Others</item>
+    </string-array>
 
 </resources>

@@ -69,7 +69,7 @@
             android:layout_toRightOf="@+id/imageViewProductImage"
             android:layout_below="@+id/textViewProductCategory">
             <ImageButton
-                android:id="@+id/MaterialButtonDecreaseQuantity"
+                android:id="@+id/ImageButtonDecreaseQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_sub"/>
@@ -81,7 +81,7 @@
                 android:padding="10dp"
                 android:text="5"/>
             <ImageButton
-                android:id="@+id/MaterialButtonIncreaseQuantity"
+                android:id="@+id/ImageButtonIncreaseQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_add"/>

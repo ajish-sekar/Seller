@@ -7,26 +7,30 @@
     tools:context=".ui.AddProductActivity">
 
     <TextView
+        android:id="@+id/textViewHeader"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:textSize="30dp"
         android:fontFamily="monospace"
         android:text="ADD NEW PRODUCT"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutProductName"
+        android:layout_below="@+id/textViewHeader"
+        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
         android:hint="Product name"
+        app:errorEnabled="true"
         android:layout_height="wrap_content" >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditProductName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:text="Dummy product"
             android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -37,12 +41,14 @@
         android:layout_width="match_parent"
         android:hint="Price"
         android:layout_height="wrap_content"
+        app:errorEnabled="true"
         android:layout_below="@+id/textInputLayoutProductName">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditProductPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="numberDecimal"
+            android:text="123.45"
             android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,14 +58,19 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:hint="Category"
+        app:errorEnabled="true"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textInputLayoutProductPrice">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditProductCategory"
-            android:layout_width="match_parent"
+        <Spinner
+            android:background="#3F3D3D"
+            android:layout_margin="10dp"
+            android:id="@+id/spinnerProductCategories"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLines="1"/>
+            android:spinnerMode="dialog"
+            android:prompt="@string/spinner_prompt"
+            android:entries="@array/product_categories"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -69,24 +80,25 @@
         android:layout_width="match_parent"
         android:hint="Description"
         android:layout_height="wrap_content"
+        app:errorEnabled="true"
         android:layout_below="@+id/textInputLayoutProductCategory">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditProductDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:text="Amazing product"
             android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linearLayoutAddImage"
         android:layout_below="@id/textInputLayoutProductDescription"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="20dp">
 
         <Button
             android:id="@+id/buttonAddImage"
@@ -94,13 +106,21 @@
             android:layout_height="wrap_content"
             android:text="Select Image" />
 
+        <TextView
+            android:id="@+id/textViewImageErrorMessage"
+            android:layout_below="@+id/buttonAddImage"
+            android:text="Please select an Image"
+            android:visibility="invisible"
+            android:textColor="#EF5F6A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <ImageView
             android:id="@+id/imageViewProductImage"
-            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/buttonAddImage"
             android:layout_width="50dp"
             android:layout_height="50dp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAddProduct"
